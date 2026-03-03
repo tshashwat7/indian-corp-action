@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.backends.legacy:build"
+
+[project]
+name = "india-corp-actions"
+version = "0.1.0"
+description = "Fetch Indian stock market corporate actions from NSE and BSE India. Free, no API keys required."
+readme = "README.md"
+requires-python = ">=3.8"
+license = { text = "MIT" }
+keywords = ["NSE", "BSE", "India", "stocks", "corporate actions", "dividend", "bonus", "split"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Financial and Insurance Industry",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Topic :: Office/Business :: Financial",
+]
+
+dependencies = [
+    "requests>=2.28.0",
+    "pandas>=1.5.0",
+    "beautifulsoup4>=4.11.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest", "pytest-cov", "black", "ruff"]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["india_corp_actions*"]
